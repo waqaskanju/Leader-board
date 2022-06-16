@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 2% 10%;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-container-v {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.p-1 {
+  margin: 10px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul li {
+  list-style-type: none;
+  padding: 5px;
+}
+
+.border {
+  border: 3px solid black;
+  padding: 5px;
+}
+
+li:nth-child(even) {
+  background-color: rgb(207, 203, 203);
+}
+
+.add-score {
+  margin-left: 20%;
+}
+
+input {
+  margin: 10px;
+}
+
+#submit {
+  width: 80px;
+  margin-left: 200px;
+}
