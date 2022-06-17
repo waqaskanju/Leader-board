@@ -52,7 +52,12 @@ input {
   margin: 10px;
 }
 
-#submit {
+#addScore {
   width: 80px;
-  margin-left: 200px;
+  margin-left: 100px;
+}
+
+.m-r-1 {
+  margin-right: 60%;
+  min-width: 150px;
 }

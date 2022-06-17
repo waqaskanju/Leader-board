@@ -9,6 +9,36 @@
  */
 (self["webpackChunkleader_board"] = self["webpackChunkleader_board"] || []).push([["main"],{
 
+/***/ "./modules/addScore.js":
+/*!*****************************!*\
+  !*** ./modules/addScore.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _baseUrl_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./baseUrl.js */ \"./modules/baseUrl.js\");\n\n\nconst addNewScore = async (user, score) => {\n  const response = await fetch(`${_baseUrl_js__WEBPACK_IMPORTED_MODULE_0__.baseUrl}/${_baseUrl_js__WEBPACK_IMPORTED_MODULE_0__.gameId}/scores/`, {\n    method: 'POST',\n    body: JSON.stringify({\n      user, score,\n    }),\n    headers: {\n      'Content-type': 'application/json; charset=UTF-8',\n    },\n  });\n  const AddScoreResponse = await response.json();\n  return AddScoreResponse;\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (addNewScore);\n\n//# sourceURL=webpack://leader-board/./modules/addScore.js?");
+
+/***/ }),
+
+/***/ "./modules/baseUrl.js":
+/*!****************************!*\
+  !*** ./modules/baseUrl.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"baseUrl\": () => (/* binding */ baseUrl),\n/* harmony export */   \"gameId\": () => (/* binding */ gameId)\n/* harmony export */ });\nconst baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games';\nconst gameId = 'dZ2jCJ2BKdEJYdsyCaJP';\n\n\n\n//# sourceURL=webpack://leader-board/./modules/baseUrl.js?");
+
+/***/ }),
+
+/***/ "./modules/getScore.js":
+/*!*****************************!*\
+  !*** ./modules/getScore.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _baseUrl_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./baseUrl.js */ \"./modules/baseUrl.js\");\n\n\nconst getScore = async () => {\n  const score = await fetch(`${_baseUrl_js__WEBPACK_IMPORTED_MODULE_0__.baseUrl}/${_baseUrl_js__WEBPACK_IMPORTED_MODULE_0__.gameId}/scores/`);\n  const jsonScore = await score.json();\n  return jsonScore.result;\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getScore);\n\n//# sourceURL=webpack://leader-board/./modules/getScore.js?");
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/style.css":
 /*!*************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/style.css ***!
@@ -115,7 +145,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n//# sourceURL=webpack://leader-board/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_addScore_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/addScore.js */ \"./modules/addScore.js\");\n/* harmony import */ var _modules_getScore_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/getScore.js */ \"./modules/getScore.js\");\n/* import '@fortawesome/fontawesome-free/css/all.css';\nimport '@fortawesome/fontawesome-free/js/all.js'; */\n\n\n\n\n/* Refresh Button */\nconst btnRefreshScore = document.getElementById('refresh');\n\n/* Load Data */\nconst scoresUsers = document.getElementById('score-board');\n\n/* Form Data */\nconst User = document.getElementById('name');\nconst Score = document.getElementById('score');\n\n/* Form Button */\nconst btnAddScore = document.getElementById('add_score');\n\nconst addScore = () => {\n  if (User.value && Score.value) {\n    (0,_modules_addScore_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(User.value, Number(Score.value));\n  }\n  User.value = '';\n  Score.value = '';\n};\n\nconst renderScores = () => {\n  const userScore = (0,_modules_getScore_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n  scoresUsers.innerHTML = '';\n  userScore.then((scores) => {\n    scores.sort((a, b) => b.score - a.score);\n    scores.forEach((element) => {\n      scoresUsers.innerHTML += `<li class=\"scores__list\"><p class=\"scores__list-p\"><span class=\"scores__list-user\">${element.user}</span> <span class=\"scores__list-score\"><i class=\"icon-Medal fa-solid fa-award\"></i>${element.score}</span> </p></li>`;\n    });\n  });\n};\n\nbtnAddScore.addEventListener('click', addScore);\nbtnRefreshScore.addEventListener('click', renderScores);\n\n//# sourceURL=webpack://leader-board/./src/index.js?");
 
 /***/ })
 

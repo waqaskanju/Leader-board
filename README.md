@@ -1,12 +1,13 @@
 # Sample Repo
 
-This Repo is for learning how to use API. In this example we will access the learder board api
+This Repo is for learning how to use API. In this example we will access the leader board api
 
 ## Built With
 
 -HTML
 -CSS
 -JavaScript
+-Webpack
 
 # Project Name
 
@@ -59,8 +60,6 @@ It executes three types of tests inside github actions.
 ### Deployment
 
 It can run on any browser. 
-Mobile Screen size below < 786
-Desktop Screen Size above >786
 
 ## Author
 
