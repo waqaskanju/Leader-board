@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
     <title>Leader Board API</title>
   <script defer src="runtime.js"></script><script defer src="main.js"></script></head>
   <body>
@@ -11,13 +10,9 @@
       <h1>Leader Board</h1>
       <div class="flex-container"> 
             <div class="recent-score ">
-                <h2>RECENT SCORES   <button class="p-1"> Refresh </button> </h2>
-                <ul class="border">
-                  <li> Name: 100</li>
-                  <li> Name: 80</li>
-                  <li> Name: 600</li>
-                  <li> Name: 50</li>
-                  <li> Name: 40</li>
+                <h2>RECENT SCORES   <button id="refresh" class="p-1"> Refresh </button> </h2>
+                <!-- Fill dynamically -->
+                <ul class="border" id="score-board">
                 </ul>
             </div>
             <div class="add-score">
@@ -26,9 +21,9 @@
                     <label for="name"></label>
                     <input type="text" name="name" id="name" placeholder="Your Name">
                     <label for="score"></label>
-                    <input type="number" name="scroe" id="score" placeholder="Your Score">
-                    <input type="submit" name="submit" id="submit">
+                    <input type="number" name="score" id="score" placeholder="Your Score">
                   </form>
+                  <button type="submit" name="submit" id="addScore">  Submit </button>
             </div>
         
       </div>
