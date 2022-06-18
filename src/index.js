@@ -30,10 +30,11 @@ const renderScores = () => {
   scoresUsers.innerHTML = '';
   userScore.then((scores) => {
     scores.sort((a, b) => b.score - a.score);
+    scoresUsers.innerHTML = '<thead><tr><th> Name</th> <th> Score</th></tr></thead>';
     scores.forEach((individual) => {
-      scoresUsers.innerHTML += `<li> 
-      <span class="m-r-1">  ${individual.user} </span>
-      <span> ${individual.score} </span> </li>`;
+      scoresUsers.innerHTML += `<tr><td> 
+      <span>  ${individual.user} </span></td><td>
+      <span> ${individual.score} </span> </td>`;
     });
   });
 };
