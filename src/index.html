@@ -7,15 +7,16 @@
   </head>
   <body>
     <div class="container">
-      <h1>Leader Board</h1>
+      <h1 class="p-1"> Chess Game Leader Board <button id="refresh"> Refresh </button></h1>
       <div class="flex-container"> 
-            <div class="recent-score ">
-                <h2>RECENT SCORES   <button id="refresh" class="p-1"> Refresh </button> </h2>
+            <div class="recent-score border">
+                <h2>RECENT SCORES</h2>
+                
                 <!-- Fill dynamically -->
-                <ul class="border" id="score-board">
-                </ul>
+                <table  id="score-board">
+                </table>
             </div>
-            <div class="add-score">
+            <div class="add-score border">
               <h2> Add Your Score</h2>
                   <form action="#" method="POST" class="flex-container-v">
                     <label for="name"></label>
@@ -23,7 +24,7 @@
                     <label for="score"></label>
                     <input type="number" name="score" id="score" placeholder="Your Score">
                   </form>
-                  <button type="submit" name="submit" id="addScore">  Submit </button>
+                  <button type="submit" name="submit" id="addScore">  Add Score </button>
             </div>
         
       </div>
