@@ -1,5 +1,3 @@
-/* import '@fortawesome/fontawesome-free/css/all.css';
-import '@fortawesome/fontawesome-free/js/all.js'; */
 import './style.css';
 import addNewScore from '../modules/addScore.js';
 import getScore from '../modules/getScore.js';
